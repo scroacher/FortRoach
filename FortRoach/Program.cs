@@ -12,7 +12,7 @@ namespace FortRoach
 {
     public class Program
     {
-        public static void Main(string[] args)
+        void Main(string[] args)
         {
             BuildWebHost(args).Run();
 				IWebHost BuildWebHost(string[] args) =>
