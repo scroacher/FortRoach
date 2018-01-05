@@ -14,25 +14,30 @@ namespace FortRoach
     {
         public static void Main(string[] args)
         {
-            //BuildWebHost(args).Run();
-            var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
+            BuildWebHost(args).Run();
+            public static IWebHost BuildWebHost(string[] args) =>
+			WebHost.CreateDefaultBuilder(args)
+               .UseStartup<Startup>()
+               .Build();
+			
+			
+			
+			
+			// var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
 
-            var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
+            // var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
 
-            var host = new WebHostBuilder()
-            .UseKestrel()
-            .UseContentRoot(Directory.GetCurrentDirectory())
-            .UseIISIntegration()
-            .UseStartup<Startup>()
-            .UseUrls(url) // 4th line added
-            .Build();
+            // var host = new WebHostBuilder()
+            // .UseKestrel()
+            // .UseContentRoot(Directory.GetCurrentDirectory())
+            // .UseIISIntegration()
+            // .UseStartup<Startup>()
+            // .UseUrls(url) // 4th line added
+            // .Build();
 
-            host.Run();
+            // host.Run();
         }
 
-        //public static IWebHost BuildWebHost(string[] args) =>
-        //    WebHost.CreateDefaultBuilder(args)
-        //        .UseStartup<Startup>()
-        //        .Build();
+        
     }
 }
