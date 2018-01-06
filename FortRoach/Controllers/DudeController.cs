@@ -27,7 +27,7 @@ namespace FortRoach.Controllers
         [HttpGet("dude/all")]
         public IActionResult All()
         {
-            return View();
+             return View();
         }
     }
 }
