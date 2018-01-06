@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FortRoach.Controllers
 {
-    public class RoachController : Controller
+    public class DudeController : Controller
     {
         [HttpGet("dude/{dude}")]
         public string Dude(string dude)
@@ -22,6 +22,12 @@ namespace FortRoach.Controllers
             }
 
             return String.Empty;
+        }
+
+        [HttpGet("dude/all")]
+        public IActionResult All()
+        {
+            return View();
         }
     }
 }
